@@ -21,5 +21,6 @@ c.onclick = function(){
     document.getElementById('counter').value = "Clicked"
     counter = counter+ 1;
     s = document.getElementById('t');
-    c.value = counter.toString();
+    // c.value = counter.toString();
+    s.innerHTML = counter.toString();
 }
