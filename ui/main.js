@@ -19,17 +19,18 @@ img.onclick = function(){
 };
 
 //creating request
-
-var request = new XMLHttpRequest();
-
-request.onreadystatechange = function(){
-  if (request.readyState==XMLHttpRequest.DONE && request.status==200){
-      var counter = request.responseText;
-      document.getElementById('count').innerHTML = counter.toString();
-  }  
+c.onclick = function(){
+    var request = new XMLHttpRequest();
+    
+    request.onreadystatechange = function(){
+      if (request.readyState==XMLHttpRequest.DONE && request.status==200){
+          var counter = request.responseText;
+          document.getElementById('count').innerHTML = counter.toString();
+      }  
+    };
+    
+    //making request
+    
+    request.open('GET', 'http://sroy8091.hasura-app.io/counter', true);
+    request.send();
 };
-
-//making request
-
-request.open('GET', 'http://sroy8091.hasura-app.io/counter', true);
-request.send();
