@@ -33,5 +33,5 @@ request.onreadystatechange = function(){
 
 //making request
 
-request.open('GET', 'http://sroy8091.cloud.hasura-app.io/counter', true);
+request.open('GET', 'http://sroy8091.hasura-app.io/counter', true);
 request.send;
