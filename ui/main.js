@@ -1,7 +1,7 @@
 console.log('Loaded!');
 
 
-var marginLeft = 0;
+var marginLeft = 10;
 var img = document.getElementById('mad');
 
 function moveRight(marginLeft){
