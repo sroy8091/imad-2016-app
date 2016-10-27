@@ -24,7 +24,7 @@ img.onclick = function(){
 var request = new XMLHttpRequest();
 
 request.onreadystatechange = function(){
-  if (request.readyState==XMLHttpRequest.DONE){
+  if (request.readyState==XMLHttpRequest.DONE && request.status==200){
       var counter = request.responseText;
       s = document.getElementById('t');
       s.innerHTML = counter.toString();
