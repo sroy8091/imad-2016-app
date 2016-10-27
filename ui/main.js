@@ -4,7 +4,6 @@ console.log('Loaded!');
 var marginLeft = 10;
 var img = document.getElementById('mad');
 var c = document.getElementById('counter');
-var counter = 0;
 
 //making image move right
 function moveRight(){
@@ -26,12 +25,11 @@ var request = new XMLHttpRequest();
 request.onreadystatechange = function(){
   if (request.readyState==XMLHttpRequest.DONE && request.status==200){
       var counter = request.responseText;
-      s = document.getElementById('t');
-      s.innerHTML = counter.toString();
+      document.getElementById('count').innerHTML = counter.toString();
   }  
 };
 
 //making request
 
 request.open('GET', 'http://sroy8091.hasura-app.io/counter', true);
-request.send;
+request.send();
