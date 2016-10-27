@@ -2,7 +2,7 @@ console.log('Loaded!');
 
 
 var marginLeft = 0;
-var img = document.getElementById('madi');
+var img = document.getElementById('mad');
 
 function moveRight(marginLeft){
 	marginLeft = marginLeft + 5;
