@@ -6,7 +6,7 @@ var img = document.getElementById('mad');
 
 function moveRight(marginLeft){
 	marginLeft = marginLeft + 5;
-	console.log(marginLeft);
+	console.log(marginLeft.toString());
 	img.style.marginLeft = marginLeft+'px';
 }
 
