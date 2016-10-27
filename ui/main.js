@@ -7,7 +7,7 @@ var img = document.getElementById('mad');
 function moveRight(marginLeft){
 	marginLeft = marginLeft + 5;
 
-	img.style.marginLeft = '100px';
+	img.style.marginLeft = marginLeft + 'px';
 }
 
 img.onclick = function(){
