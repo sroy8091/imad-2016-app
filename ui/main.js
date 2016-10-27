@@ -19,5 +19,5 @@ img.onclick = function(){
 
 c.onclick = function(){
     counter = counter+ 1;
-    c.innerHTML = counter;
+    c.innerHTML = counter.toString();
 }
