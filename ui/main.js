@@ -1,13 +1,13 @@
 console.log('Loaded!');
 
 
-var margin-Left = 10;
+var marginLeft = 10;
 var img = document.getElementById('mad');
 
 function moveRight(){
-	margin-Left = margin-Left + 5;
+	marginLeft = marginLeft + 5;
 
-	img.style.marginLeft = margin-Left + 'px';
+	img.style.marginLeft = marginLeft + 'px';
 }
 
 img.onclick = function(){
