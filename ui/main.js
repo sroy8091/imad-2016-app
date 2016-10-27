@@ -18,7 +18,7 @@ img.onclick = function(){
 };
 
 c.onclick = function(){
-    document.getElementById('counter').value = "Clicked"
+    document.getElementById('counter').innerHTML = "Clicked"
     counter = counter + 1;
     s = document.getElementById('t');
     // c.value = counter.toString();
