@@ -35,8 +35,7 @@ c.onclick = function(){
     request.send(null);
 };
 
-var nameInput = document.getElementById('name');
-var name = nameInput.value;
+
 
 var button = document.getElementById('submit');
 button.onclick = function(){
@@ -55,6 +54,8 @@ button.onclick = function(){
       }  
     };
     
+    var nameInput = document.getElementById('name');
+    var name = nameInput.value;
     //making request
     
     request.open('GET', 'http://sroy8091.imad.hasura-app.io/submit-name?name='+name, true);
