@@ -25,6 +25,7 @@ c.onclick = function(){
     request.onreadystatechange = function(){
       if (request.readyState==XMLHttpRequest.DONE && request.status==200){
           var counter = request.responseText;
+          console.log(counter);
           document.getElementById('count').innerHTML = counter.toString();
       }  
     };
