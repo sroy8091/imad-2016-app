@@ -35,3 +35,10 @@ c.onclick = function(){
     request.open('GET', 'http://sroy8091.imad.hasura-app.io/counter', true);
     request.send(null);
 };
+
+var name = document.getElementById('name');
+var button = document.getElementById('submit');
+// button.onclick = function(){
+//     for
+//     document.getElementById('list').innerHTML = '<li>'+name'<li>';
+// };
