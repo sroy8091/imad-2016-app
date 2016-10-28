@@ -25,7 +25,6 @@ c.onclick = function(){
     request.onreadystatechange = function(){
       if (request.readyState==XMLHttpRequest.DONE && request.status==200){
           var counter = request.responseText;
-          console.log(counter);
           document.getElementById('count').innerHTML = counter.toString();
       }  
     };
@@ -36,9 +35,27 @@ c.onclick = function(){
     request.send(null);
 };
 
-var name = document.getElementById('name');
+var nameInput = document.getElementById('name');
+var name = nameInput.value;
+var list = '';
 var button = document.getElementById('submit');
-// button.onclick = function(){
-//     for
-//     document.getElementById('list').innerHTML = '<li>'+name'<li>';
-// };
+button.onclick = function(){
+    
+    var request = new XMLHttpRequest();
+    
+    request.onreadystatechange = function(){
+      if (request.readyState==XMLHttpRequest.DONE && request.status==200){
+          var names = request.responseText;
+          names = JSON.parse(names);
+        for(var i=0; i<names.length; i++){
+              list = '<li>'+names[i]+'</li>';
+        }
+        document.getElementById('list').innerHTML = list;
+      }  
+    };
+    
+    //making request
+    
+    request.open('GET', 'http://sroy8091.imad.hasura-app.io/submit-name'+name, true);
+    request.send(null);
+};
