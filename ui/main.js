@@ -32,5 +32,5 @@ c.onclick = function(){
     //making request
     
     request.open('GET', 'http://sroy8091.hasura-app.io/counter', true);
-    request.send();
+    request.send(null);
 };
