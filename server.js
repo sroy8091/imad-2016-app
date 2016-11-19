@@ -1,11 +1,24 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var Pool = require('pg').Pool;
+
+var pool = new Pool({
+  user: 'sroy8091',
+  password: 'db-sroy8091-5938',
+  host: 'db.imad.hasura-app.io',
+  database: 'sroy8091',
+  max: 10, // max number of clients in pool
+  idleTimeoutMillis: 1000, // close & remove clients which have been idle > 1 second
+  port: '5432'
+});
 
 var app = express();
 app.use(morgan('combined'));
 
 var counter = 0;
+// var pool = new Pool(config)
+
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -16,6 +29,17 @@ app.get('/counter', function(req, res){
     res.send(counter.toString());
 });
 
+app.get('/test-db', function (req, res) {
+    pool.query('SELECT * FROM article', function(err, result){
+      if (err){
+        res.status(500).send(err.toString());
+      }
+      else{
+        res.send(JSON.stringify(result));
+      }
+  });
+});
+
 var names = [];
 app.get('/submit-name', function(req, res){ //url=submit-name?name=xxxx
     //for params url app.get('submit-name/:name') and req.params.name
@@ -23,6 +47,10 @@ app.get('/submit-name', function(req, res){ //url=submit-name?name=xxxx
     names.push(name);
     res.send(JSON.stringify(names));
 });
+
+app.get('blog', function(req, res){
+  res.sendFile(path.join(__dirname, 'ui', 'blog.html'))
+})
 
 app.get('/article-one', function(req, res){
     res.send("Article 1 is not here");
