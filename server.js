@@ -5,7 +5,7 @@ var Pool = require('pg').Pool;
 
 var pool = new Pool({
   user: 'sroy8091',
-  password: env.DB_PASSWORD,
+  password: process.env.DB_PASSWORD,
   host: 'db.imad.hasura-app.io',
   database: 'sroy8091',
   max: 10, // max number of clients in pool
