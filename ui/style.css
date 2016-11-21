@@ -13,9 +13,9 @@
 }
 #home {
     text-align: center;
-    background: url("http://www.orphicpixel.com/wp-content/uploads/2013/08/minimal-wallpaper-01.png") fixed;
+    background: url("http://www.orphicpixel.com/wp-content/uploads/2013/08/minimal-wallpaper-01.png") center center fixed;
     background-position : fixed;
-    background-size : contain;
+    background-size : cover;
     height: 700px;
     
 }
@@ -23,6 +23,7 @@
   color:#ffff80;
   font-size: 30px;
   font-family:Robotto;
+  padding-top:75px;
 }
 .btn{
     background: white;
@@ -40,9 +41,9 @@
     text-align: center;
     background: url("http://p1.pichost.me/i/74/1990192.jpg") center center fixed;
     background-position : fixed;
-    background-size : contain;
+    background-size : cover;
     height: 620px;
-    margin: -50px;
+    margin-top: -50px;
     color:#fff;
 }
 #about h1{
@@ -73,8 +74,8 @@
 #portfolio{
   background:  url("http://p1.pichost.me/i/28/1514076.jpg") center center fixed;
   height:1100px;
-  margin:-50px;
-  background-size: contain;
+  margin-top:-50px;
+  background-size: cover;
   text-align:center;
 }
 #portfolio h1{
@@ -99,22 +100,25 @@
   padding-top: 10px;
  }
 
-.footer ul li{
+/*.footer ul li{
   text-color: white;
   font-size: 14px;
   display: inline;
   margin: 10px 10px 10px 10px;
-}
+}*/
 
 .footer p{
   font-size: 14px;
-  margin: 10px 10px 10px 50px;
+  padding-left: 4%
 }
-#con{
-   /*text-align:left;*/
+#contact{
+   text-align:left;
    font-size:17px;
    font-family:Sans-serif;
 }
-#con:hover{
+#contact:hover{
   color:green;
+}
+#contact a {
+  padding-left:4%;
 }

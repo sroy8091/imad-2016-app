@@ -48,21 +48,21 @@ app.get('/submit-name', function(req, res){ //url=submit-name?name=xxxx
     res.send(JSON.stringify(names));
 });
 
-app.get('blog', function(req, res){
-  res.sendFile(path.join(__dirname, 'ui', 'blog.html'))
-})
+app.get('/blog', function(req, res){
+  res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
+});
 
 app.get('/article-one', function(req, res){
     res.send("Article 1 is not here");
 });
 
-app.get('/article-two', function(req, res){
-    res.send("Article 2 is not here");
-});
+// app.get('/article-two', function(req, res){
+//     res.send("Article 2 is not here");
+// });
 
-app.get('/article-three', function(req, res){
-    res.send("Article 3 is not here");
-});
+// app.get('/article-three', function(req, res){
+//     res.send("Article 3 is not here");
+// });
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));

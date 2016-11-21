@@ -3,7 +3,7 @@
     <head>
         <link href="/ui/style.css" rel="stylesheet" />
         <script type="text/javascript" src="/ui/main.js"></script>
-        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine:bold,bolditalic|Inconsolata:italic|Droid+Sans">
         <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
@@ -21,6 +21,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
+                <span class='icon-bar'></span>
               </button>
               <a class="navbar-brand" href="#">Sumit's Portfolio</a>
             </div>
@@ -30,7 +31,7 @@
                 <li><a href="#about" class="fa fa-heartbeat">  About</a></li>
                 <li><a href="#portfolio" class="fa fa-paw">  Portfolio</a></li>
                 <li><a href="#contact" class="fa fa-connectdevelop">  Contact</a></li>
-                <li><a href="/article-one">Blog</a></li>
+                <li><a href="" class="blog fa fa-snowflake-o"> Blog</a></li>
               </ul>
             </div>
           </div>
@@ -114,7 +115,7 @@
           
         $('body').scrollspy({target: ".navbar", offset: 50});   
 
-          
+        $('.blog').click(function(){open("/blog");});
         $("#myNavbar a").on('click', function(event) {
 
            
@@ -123,7 +124,7 @@
            
             var hash = this.hash;
 
-           
+            
             $('html, body').animate({
               scrollTop: $(hash).offset().top
             }, 500, function(){
