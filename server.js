@@ -98,7 +98,7 @@ app.post('/login', function(req, res){
         }
         else{
             if(result.rows.length===0){
-                res.send(500).send('Email address not found');
+                res.send(500).send('Username not found');
             }
             else{
                 var dbString = result.rows[0].password[1];
@@ -108,7 +108,7 @@ app.post('/login', function(req, res){
                     res.send('Logged in successfully');
                 }
                 else{
-                    res.send('email or password is wrong');
+                    res.send('Username or password is wrong');
                 }
             }
         }
