@@ -59,7 +59,12 @@ app.get('/counter', function(req, res){
 
 function hash(input, salt){
   var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
-  return hashed.toString('hex');
+  return [salt, hashed.toString('hex')].join('$');
+}
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
 }
 
 app.get('/hash/:input', function(req, res){
@@ -82,6 +87,33 @@ app.post('/createuser', function(req, res){
         res.send("User Successfully created "+username);
       }
   });
+});
+
+app.post('/login', function(req, res){
+    var username = req.body.username;
+    var password = req.body.password;
+    pool.query('SELECT * FROM "user" WHERE username=$1', [username], function(err, result){
+        if (err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            if(result.rows.length===0){
+                res.send(500).send('Username not found');
+            }
+            else{
+                var dbString = result.rows[0].password;
+                var salt = dbString.split('$')[0];
+                var hashedString = hash(password, salt);
+                if(hashedString===dbString){
+                    res.send('Logged in successfully');
+                }
+                else{
+                    res.send('Username or password is wrong');
+                }
+            }
+        }
+    });
+  
 });
 
 app.get('/articles/:articleName', function (req, res) {
