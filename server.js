@@ -126,6 +126,7 @@ app.post('/login', function(req, res){
             }
             else{
                 var dbString = result.rows[0].password[1];
+                console.log(dbString);
                 var salt = result.rows[0].password[0];
                 var hashedString = hash(password, salt);
                 if(hashedString===dbString){
