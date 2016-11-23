@@ -48,7 +48,7 @@ button.onclick = function(){
           if(request.status==200){
             alert('Login successfully');
           }
-          if(request.status==403){
+          else if(request.status==403){
             alert('Username or password is incorrect');
           }
           else{
