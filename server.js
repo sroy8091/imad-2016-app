@@ -6,7 +6,7 @@ var crypto = require('crypto');
 var bodyParser = require('bodyParser');
 var pool = new Pool({
   user: 'sroy8091',
-  password: process.env.DB_PASSWORD,
+  password: 'db-sroy8091-5938',
   host: 'db.imad.hasura-app.io',
   database: 'sroy8091',
   max: 10, // max number of clients in pool
