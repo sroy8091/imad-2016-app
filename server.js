@@ -92,7 +92,6 @@ app.post('/createuser', function(req, res){
 app.post('/login', function(req, res){
   var username = req.body.username;
   var password = req.body.password;
-  var dbString = hash(password, salt);
   if(validateEmail(username)===true){
     pool.query('SELECT * FROM "user" WHERE email=$1', [username], function(err, result){
         if (err){
