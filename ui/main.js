@@ -13,31 +13,32 @@ function moveRight(){
 }
 
 //onclicking image after 100ms moveRight function will be called
-img.onclick = function(){
-	var interval = setInterval(moveRight, 100);
-// img.style.marginLeft = '100px';
-};
+// img.onclick = function(){
+// 	var interval = setInterval(moveRight, 100);
+// // img.style.marginLeft = '100px';
+// };
 
 //creating request
-c.onclick = function(){
-    var request = new XMLHttpRequest();
+// c.onclick = function(){
+//     var request = new XMLHttpRequest();
     
-    request.onreadystatechange = function(){
-      if (request.readyState==XMLHttpRequest.DONE && request.status==200){
-          var counter = request.responseText;
-          document.getElementById('count').innerHTML = counter.toString();
-      }  
-    };
+//     request.onreadystatechange = function(){
+//       if (request.readyState==XMLHttpRequest.DONE && request.status==200){
+//           var counter = request.responseText;
+//           document.getElementById('count').innerHTML = counter.toString();
+//       }  
+//     };
     
-    //making request
+//     //making request
     
-    request.open('GET', 'http://sroy8091.imad.hasura-app.io/counter', true);
-    request.send(null);
-};
+//     request.open('GET', 'http://sroy8091.imad.hasura-app.io/counter', true);
+//     request.send(null);
+// };
 
 
 
 var button = document.getElementById('submit');
+console.log(button.value);
 button.onclick = function(){
     
     var request = new XMLHttpRequest();
@@ -57,12 +58,13 @@ button.onclick = function(){
     };
     
     var username = document.getElementById('username').value;
+    console.log(username);
     var password = document.getElementById('password').value;
 
     //making request
     
     request.open('POST', 'http://sroy8091.imad.hasura-app.io/login', true);
     request.setRequestHeader('Content-Type', 'application/json');
-    request.send(JSON.stringify({username:username, password:password});
+    request.send(JSON.strinfigy({username:username, password:password}));
 };
 
