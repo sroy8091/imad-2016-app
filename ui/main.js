@@ -48,10 +48,10 @@ button.onclick = function(){
           if(request.status==200){
             alert('Login successfully');
           }
-          else(request.status==403){
+          else if(request.status==403){
             alert('Username or password is incorrect');
           }
-          else{
+          else if(request.status==500){
             alert('Server error');
           }
       }  
@@ -67,4 +67,4 @@ button.onclick = function(){
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({username:username, password:password}));
 };
-}
+};
