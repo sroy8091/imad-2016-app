@@ -122,7 +122,7 @@ app.post('/login', function(req, res){
         }
         else{
             if(result.rows.length===0){
-                res.send(403).send('Username not found');
+                res.send(500).send('Username not found');
             }
             else{
                 var dbString = result.rows[0].password[1];
