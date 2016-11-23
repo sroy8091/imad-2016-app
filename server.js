@@ -62,6 +62,11 @@ function hash(input, salt){
   return [salt, hashed.toString('hex')].join('$');
 }
 
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
 app.get('/hash/:input', function(req, res){
   var hashedString = hash(req.params.input, 'This-is-somesalt');
   res.send(hashedString);
@@ -82,6 +87,59 @@ app.post('/createuser', function(req, res){
         res.send("User Successfully created "+username);
       }
   });
+});
+
+app.post('/login', function(req, res){
+  var username = req.body.username;
+  var password = req.body.password;
+  var dbString = hash(password, salt);
+  if(validateEmail(username)===true){
+    pool.query('SELECT * FROM "user" WHERE email=$1', [username], function(err, result){
+        if (err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            if(result.rows.length===0){
+                res.send(403).send('Email address not found');
+            }
+            else{
+                var dbString = result.rows[0].password[1];
+                var salt = result.rows[0].password[0];
+                var hashedString = hash(password, salt);
+                if(hashedString===dbString){
+                    res.send('Logged in successfully');
+                }
+                else{
+                    res.send('email or password is wrong');
+                }
+            }
+        }
+    });
+  }
+  else{
+      pool.query('SELECT * FROM "user" WHERE username=$1', [username], function(err, result){
+        if (err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            if(result.rows.length===0){
+                res.send(403).send('Email address not found');
+            }
+            else{
+                var dbString = result.rows[0].password[1];
+                var salt = result.rows[0].password[0];
+                var hashedString = hash(password, salt);
+                if(hashedString===dbString){
+                    res.send('Logged in successfully');
+                }
+                else{
+                    res.send(403).send('email or password is wrong');
+                }
+            }
+        }
+    });
+  }
+  
 });
 
 app.get('/articles/:articleName', function (req, res) {
