@@ -101,8 +101,9 @@ app.post('/login', function(req, res){
                 res.send(500).send('Username not found');
             }
             else{
-                var dbString = result.rows[0].password[1];
-                var salt = result.rows[0].password[0];
+                var dbString = result.rows[0].password;
+                var salt = dbString.strip('$')[0];
+                dbString = dbString.strip('$')[1];
                 var hashedString = hash(password, salt);
                 if(hashedString===dbString){
                     res.send('Logged in successfully');
