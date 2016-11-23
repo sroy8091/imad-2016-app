@@ -90,9 +90,8 @@ app.post('/createuser', function(req, res){
 });
 
 app.post('/login', function(req, res){
-  var username = req.body.username;
-  var password = req.body.password;
-  if(validateEmail(username)===false){
+    var username = req.body.username;
+    var password = req.body.password;
     pool.query('SELECT * FROM "user" WHERE username=$1', [username], function(err, result){
         if (err){
             res.status(500).send(err.toString());
@@ -114,31 +113,6 @@ app.post('/login', function(req, res){
             }
         }
     });
-  }
-  else{
-      pool.query('SELECT * FROM "user" WHERE username=$1', [username], function(err, result){
-        if (err){
-            res.status(500).send(err.toString());
-        }
-        else{
-            if(result.rows.length===0){
-                res.send(500).send('Username not found');
-            }
-            else{
-                var dbString = result.rows[0].password[1];
-                console.log(dbString);
-                var salt = result.rows[0].password[0];
-                var hashedString = hash(password, salt);
-                if(hashedString===dbString){
-                    res.send('Logged in successfully');
-                }
-                else{
-                    res.send(403).send('email or password is wrong');
-                }
-            }
-        }
-    });
-  }
   
 });
 
