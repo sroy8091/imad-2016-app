@@ -120,7 +120,7 @@ app.post('/login', function(req, res){
                     res.send('Logged in successfully');
                 }
                 else{
-                    res.send('Username or password is wrong');
+                    res.status(403).send('Username or password is wrong');
                 }
             }
         }
