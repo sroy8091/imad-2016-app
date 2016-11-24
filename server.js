@@ -116,6 +116,7 @@ app.post('/login', function(req, res){
 
                     //setting session id
                     req.session.auth = {userId:result.rows[0].id};
+                    
                     res.send('Logged in successfully');
                 }
                 else{
