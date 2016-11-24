@@ -4,6 +4,8 @@ var path = require('path');
 var Pool = require('pg').Pool;
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
+var session = require('express-session')
+
 var pool = new Pool({
   user: 'sroy8091',
   password: process.env.DB_PASSWORD,
@@ -17,6 +19,12 @@ var pool = new Pool({
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.use(session({
+  secret : 'SomeReallyShittyCode',
+  cookie : {maxAge:1000*60*30},
+}));
+
+
 var counter = 0;
 // var pool = new Pool(config)
 
@@ -105,6 +113,9 @@ app.post('/login', function(req, res){
                 var salt = dbString.split('$')[0];
                 var hashedString = hash(password, salt);
                 if(hashedString===dbString){
+
+                    //setting session id
+                    req.session.auth = {userId:result.rows[0].id};
                     res.send('Logged in successfully');
                 }
                 else{
@@ -114,6 +125,16 @@ app.post('/login', function(req, res){
         }
     });
   
+});
+
+app.get('/checklogin', function(req, res){
+  if(req.session && req.session.auth && req.session.auth.userId){
+    res.send('You are already logged in');
+
+  }
+  else{
+    res.send('Your session has been expired');
+  }
 });
 
 app.get('/articles/:articleName', function (req, res) {
