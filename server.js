@@ -21,7 +21,7 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(session({
   secret : 'SomeReallyShittyCode',
-  cookie : {maxAge:1000*60*60*60},
+  cookie : {maxAge:1000*60*60*24*30},
 }));
 
 
