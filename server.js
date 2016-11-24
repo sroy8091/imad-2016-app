@@ -128,15 +128,14 @@ app.post('/login', function(req, res){
   
 });
 
-app.get('/checklogin', function(req, res){
-  if(req.session && req.session.auth && req.session.auth.userId){
-    res.send('You are already logged in');
-
-  }
-  else{
-    res.send('Your session has been expired');
-  }
-});
+// app.get('/checklogin', function(req, res){
+//   if(req.session && req.session.auth && req.session.auth.userId){
+//     res.send('You are already logged in');
+//   }
+//   else{
+//     res.send('Your session has been expired');
+//   }
+// });
 
 app.get('/articles/:articleName', function (req, res) {
     pool.query("SELECT * FROM article where title=$1", [req.params.articleName], function(err, result){
