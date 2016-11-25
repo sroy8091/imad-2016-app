@@ -36,7 +36,7 @@ function moveRight(){
 // };
 
 
-
+window.onload = function(){
 var button = document.getElementById('submit');
 
 button.onclick = function(){
@@ -72,3 +72,4 @@ button.onclick = function(){
     request.send(JSON.stringify({username:username, password:password}));
 };
 
+};
