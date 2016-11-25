@@ -39,8 +39,8 @@ var c = document.getElementById('counter');
 // };
 
 
-window.onload = function(){
-var button = document.getElementById('submit');
+// window.onload = function(){
+// var button = document.getElementById('submit');
 
 // button.onclick = function(){
     
@@ -214,4 +214,4 @@ loadLogin();
 
 // Now this is something that we could have directly done on the server-side using templating too!
 loadArticles();
-};
+// };
