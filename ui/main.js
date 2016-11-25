@@ -55,7 +55,7 @@ button.onclick = function(){
             alert('Server error');
           }
           else if (request.status==502){
-            alert(request.error.toString());
+            alert(502);
           }
       }  
     };
