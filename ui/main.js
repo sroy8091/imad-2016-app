@@ -66,7 +66,7 @@ button.onclick = function(){
 
     //making request
     
-    request.open('POST', 'http://sroy8091.imad.hasura-app.io/login', true);
+    request.open('POST', '/login', true);
     // request.open('POST', 'localhost:8080/login', true)
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({username:username, password:password}));
