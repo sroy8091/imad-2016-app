@@ -1,16 +1,52 @@
 console.log('Loaded!');
 
 
+
 var marginLeft = 10;
 var img = document.getElementById('mad');
 var c = document.getElementById('counter');
 
 //making image move right
-function moveRight(){
-	marginLeft = marginLeft + 5;
+// function moveRight(){
+// 	marginLeft = marginLeft + 5;
 
-	img.style.marginLeft = marginLeft + 'px';
-}
+// 	img.style.marginLeft = marginLeft + 'px';
+// }
+
+$(document) .ready(function(){
+
+  $("#button1").click(function(){ window.open("https://in.linkedin.com/in/sumit-roy-15a287aa");
+});
+  $("#button2").click(function(){  window.open("https://github.com/sroy8091");
+});
+    $("#button3").click(function(){ window.open("https://twitter.com/sroy8091");
+});
+   $("#button4").click(function(){ window.open("https://www.facebook.com/sumit.roy.925059");
+});
+  
+$('body').scrollspy({target: ".navbar", offset: 50});   
+
+$('.blog').click(function(){open("/blog");});
+$("#myNavbar a").on('click', function(event) {
+
+   
+    event.preventDefault();
+
+   
+    var hash = this.hash;
+
+    
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 500, function(){
+      window.location.hash = hash;
+    });
+});
+
+$("#image1").click(function(){ window.open("www.kgec.ac.in");});
+$("#image3").click(function(){ window.open("http://culture.preseed.in/team.html");});
+$("#image5").click(function(){ window.open("http://codepen.io/sroy8091/full/JGzXJG");});
+});
 
 //onclicking image after 100ms moveRight function will be called
 // img.onclick = function(){
