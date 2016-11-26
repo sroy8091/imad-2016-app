@@ -126,6 +126,7 @@
     color:#800000;
     background: url("https://s16.postimg.org/sdb5izz4l/1280x720_data_wallpapers_3_787102.jpg") center center fixed;
     background-size: cover;
+    background: rgba(0,0,0,0.42);
 }
 
 .footer {
