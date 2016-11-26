@@ -124,7 +124,7 @@
 #article-page{
     font-family:'robotto';
     color:#800000;
-    background: url("https://s16.postimg.org/sdb5izz4l/1280x720_data_wallpapers_3_787102.jpg") center center fixed;
+    background-image: url("https://s16.postimg.org/sdb5izz4l/1280x720_data_wallpapers_3_787102.jpg") center center fixed;
     background-size: cover;
     -webkit-filter: blur(5px);
     -moz-filter: blur(5px);
