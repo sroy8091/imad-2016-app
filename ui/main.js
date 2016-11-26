@@ -78,7 +78,7 @@ var c = document.getElementById('counter');
 window.onload = function(){
 function loadLoginForm () {
     var loginHtml = `
-        <h3>Login/Register to unlock awesome features</h3>
+        <h3>Login/Register to unlock comment section</h3>
         <input type="text" id="username" placeholder="username" />
         <input type="password" id="password" />
         <br/><br/>
