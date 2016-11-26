@@ -109,8 +109,8 @@
     background: url("https://s17.postimg.org/5cxaj2ma7/Article.jpg") center center fixed;
     /*background-position : fixed;*/
     background-size : cover;
-    height: 700px;
-    
+    height: 300px;
+    margin-top:-50px;
 }
 
 .footer {
