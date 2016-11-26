@@ -114,6 +114,12 @@
     padding-left: 5%;
 }
 
+#blog h1{
+  margin-top:150px;
+  color:white;
+  text-shadow: 4px 2px 4px black;
+}
+
 #articles {
     text-align:left;
 }
