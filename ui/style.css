@@ -115,7 +115,8 @@
 }
 
 #blog h1{
-  padding-top:150px;
+    text-align:center;
+  padding-top:50px;
   color:#6d0078;
   text-shadow: 4px 2px 4px black;
 }
