@@ -56,11 +56,13 @@ function createTemplate (data) {
               </h3>
               <div>
               <p>
-                  ${date.toDateString()}
+                  When it happened:  ${date.toDateString()}
                   </p>
               </div>
               <div>
-                ${content}
+              <p>
+                What happened: ${content}
+                </p>
               </div>
               <hr/>
               <h4>Comments</h4>
