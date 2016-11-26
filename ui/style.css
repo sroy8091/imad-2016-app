@@ -121,6 +121,10 @@
     padding-top:5%;
 }
 
+#article-page{
+        background: url("https://s17.postimg.org/5cxaj2ma7/Article.jpg") center center fixed;
+}
+
 .footer {
   height: 80px;
   background-color:#999999;
