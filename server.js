@@ -44,7 +44,7 @@ function createTemplate (data) {
           <link href="/ui/style.css" rel="stylesheet" />
       </head> 
       <body>
-          <div class="article-page"></div>
+          <div class="background-image"></div>
           <div class="container content">
               <div>
                   <a href="/">Home</a>
