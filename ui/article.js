@@ -1,3 +1,4 @@
+window.onload = function(){
 var currentArticleTitle = window.location.pathname.split('/')[2];
 
 function loadCommentForm () {
@@ -97,3 +98,4 @@ function loadComments () {
 // The first thing to do is to check if the user is logged in!
 loadLogin();
 loadComments();
+};
