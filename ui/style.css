@@ -106,7 +106,6 @@
 }
 
 #blog {
-    text-align: center;
     background: url("https://s17.postimg.org/5cxaj2ma7/Article.jpg") center center fixed;
     /*background-position : fixed;*/
     background-size : cover;
@@ -119,7 +118,7 @@
 }
 
 #login_area{
-    padding-top:10%;
+    padding-top:5%;
 }
 
 .footer {
