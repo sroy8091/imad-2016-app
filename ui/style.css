@@ -3,7 +3,7 @@
     color: #EEEEEE;
 }
 #home h1{
-  postion: absolute;
+  /*postion: absolute;*/
   color: #240f0f;
   font-family: 'Poiret One', 'sans-serif';
   font-size: 100px;
@@ -14,7 +14,7 @@
 #home {
     text-align: center;
     background: url("http://www.orphicpixel.com/wp-content/uploads/2013/08/minimal-wallpaper-01.png") center center fixed;
-    background-position : fixed;
+    /*background-position : fixed;*/
     background-size : cover;
     height: 700px;
     
@@ -65,7 +65,7 @@
 }
 #about img{
   border-radius: 50%;
-  align: middle;
+  /*align: middle;*/
   height:300px;
   width:300px;
   padding:30px;
@@ -92,6 +92,16 @@
 }
 #portfolio h3{
   color:#737373;
+}
+
+#blog h1{
+  /*postion: absolute;*/
+  color: #240f0f;
+  font-family: 'sans-serif';
+  font-size: 100px;
+  text-shadow: 4px 4px 4px #5a2626;
+  margin-top: 50px;
+  margin-bottom:150px;
 }
 
 .footer {
