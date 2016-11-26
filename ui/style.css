@@ -129,8 +129,8 @@
 
   display: block;
   background-image: url('https://s16.postimg.org/sdb5izz4l/1280x720_data_wallpapers_3_787102.jpg');
-  width: 1200px;
-  height: 800px;
+  width: 100%;
+  height: 100%;
   background-size: cover;
 
   -webkit-filter: blur(5px);
@@ -141,7 +141,7 @@
 }
 
 .content {
-  color:#800000;
+  color:#d12727;
   position: fixed;
   left: 0;
   right: 0;
