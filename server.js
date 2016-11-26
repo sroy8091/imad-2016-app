@@ -44,7 +44,7 @@ function createTemplate (data) {
           <link href="/ui/style.css" rel="stylesheet" />
       </head> 
       <body>
-          <div class="container" style="background: url("https://s17.postimg.org/5cxaj2ma7/Article.jpg") center center fixed">
+          <div class="container" id="article-page">
               <div>
                   <a href="/">Home</a>
               </div>
