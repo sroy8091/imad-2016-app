@@ -43,8 +43,8 @@ function createTemplate (data) {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link href="/ui/style.css" rel="stylesheet" />
       </head> 
-      <body style="background: url("https://s17.postimg.org/5cxaj2ma7/Article.jpg") center center fixed">
-          <div class="container">
+      <body>
+          <div class="container" style="background: url("https://s17.postimg.org/5cxaj2ma7/Article.jpg") center center fixed">
               <div>
                   <a href="/">Home</a>
               </div>
