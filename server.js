@@ -257,7 +257,7 @@ app.post('/submit-comment/:articleName', function (req, res) {
                         [req.body.comment, articleId, req.session.auth.userId],
                         function (err, result) {
                             if (err) {
-                                res.status(500).send(err.toString());
+                                res.status(500).send(err.toString()+'insert');
                             } else {
                                 res.status(200).send('Comment inserted!')
                             }
