@@ -41,6 +41,7 @@ function createTemplate (data) {
               ${title}
           </title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
           <link href="/ui/style.css" rel="stylesheet" />
       </head> 
       <body>
