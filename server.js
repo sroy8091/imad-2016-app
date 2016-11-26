@@ -45,7 +45,7 @@ function createTemplate (data) {
       </head> 
       <body>
           <div id="article-page"></div>
-          <div class="container">
+          <div class="container" id="content">
               <div>
                   <a href="/">Home</a>
               </div>
