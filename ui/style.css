@@ -139,6 +139,7 @@
 
 #article container{
     color:#800000;
+    z-index:999;
     
 }
 
