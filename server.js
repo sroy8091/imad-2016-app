@@ -176,9 +176,17 @@ app.get('/check-login', function (req, res) {
    }
 });
 
+function logout(){
+    var template = `<a href="/">Home</a>
+    <hr>
+    <h3>Logged out Successfully</h3>
+    `;
+    return template;
+}
+
 app.get('/logout', function(req, res){
     delete req.session.auth;
-    res.send('Logged out successfully');
+    res.send(logout());
 });
 
 // app.get('/articles/:articleName', function (req, res) {
