@@ -14,7 +14,7 @@
     "morgan": "^1.7.0",
     "pg": "^6.1.0",
     "body-parser": "^1.15.2",
-    "crypto": "^0.3"
+    // "crypto": "^0.3"
   },
   "devDependencies": {},
   "repository": {
