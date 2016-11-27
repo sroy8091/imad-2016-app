@@ -125,7 +125,7 @@ app.post('/create-user', function(req, res){
             });
         }
         else{
-          res.send("username already exists.");
+          res.status(409).send("username already exists.");
         } 
   });
 });
