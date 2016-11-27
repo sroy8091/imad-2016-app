@@ -141,7 +141,7 @@ function loadLoginForm () {
                   alert('User created successfully');
                   register.value = 'Registered!';
               }
-              else if(reques.status === 409){
+              else if(request.status === 409){
                   alert('Username already exist');
                   register.value = 'Register';
               }
