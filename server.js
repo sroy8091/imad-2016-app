@@ -8,7 +8,7 @@ var session = require('express-session');
 
 var pool = new Pool({
   user: 'sroy8091',
-  password: 'db-sroy8091-5938',
+  password: process.env.DB_PASSWORD,
   host: 'db.imad.hasura-app.io',
   database: 'sroy8091',
   max: 10, // max number of clients in pool
