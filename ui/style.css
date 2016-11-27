@@ -66,11 +66,12 @@
 #about img{
   border-radius: 50%;
   /*align: middle;*/
-  height:300px;
-  width:300px;
+  height:60%;
+  width:40%;
   padding:30px;
   margin-top:40px;
 }
+
 #portfolio{
   background:  url("http://p1.pichost.me/i/28/1514076.jpg") center center fixed;
   height:1100px;
@@ -106,16 +107,16 @@
 }
 
 #blog {
-    background: url("https://s17.postimg.org/5cxaj2ma7/Article.jpg") center center fixed;
-    /*background-position : fixed;*/
-    background-size : cover;
-    height: 400px;
-    margin-top:-50px;
-    padding-left: 5%;
+  background: url("https://s17.postimg.org/5cxaj2ma7/Article.jpg") center center fixed;
+  /*background-position : fixed;*/
+  background-size : cover;
+  height: 400px;
+  margin-top:-50px;
+  padding-left: 5%;
 }
 
 #blog h1{
-    text-align:center;
+  text-align:center;
   padding-top:50px;
   color:#6d0078;
   text-shadow: 4px 2px 4px black;

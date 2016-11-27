@@ -125,8 +125,11 @@ function loadLoginForm () {
         
     };
     
+    var invalid = /\s/;
+
     var register = document.getElementById('register_btn');
     register.onclick = function () {
+
         // Create a request object
         var request = new XMLHttpRequest();
         
@@ -147,10 +150,16 @@ function loadLoginForm () {
         // Make the request
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
-        request.open('POST', '/create-user', true);
-        request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({username: username, password: password}));  
-        register.value = 'Registering...';
+        if(username=="" || invalid.test(username)){
+          alert('Username format is wrong. It must not be empty and avoid whitespaces.');
+        }
+        else{
+          request.open('POST', '/create-user', true);
+          request.setRequestHeader('Content-Type', 'application/json');
+          request.send(JSON.stringify({username: username, password: password}));  
+          register.value = 'Registering...';
+        }
+        
     
     };
 }
