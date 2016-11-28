@@ -155,8 +155,11 @@ function loadLoginForm () {
         // Make the request
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
-        if(username=="" || invalid.test(username)){
+        if(username==="" || invalid.test(username)){
           alert('Username format is wrong. It must not be empty and avoid whitespaces.');
+        }
+        else if(username==="" || invalid.test(username)){
+            alert('Password must not be empty');
         }
         else{
           request.open('POST', '/create-user', true);
