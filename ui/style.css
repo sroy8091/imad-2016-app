@@ -1,3 +1,6 @@
+body {
+	cursor: url('images.png'), default;
+}
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     background-color: #0E2F44;
     color: #EEEEEE;
